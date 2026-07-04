@@ -1,133 +1,166 @@
 import os
 import base64
 import json
+import random
 import requests
 from dotenv import load_dotenv
 
 load_dotenv()
 
-API_KEY = os.getenv("PRINTIFY_API_KEY")
-SHOP_ID = os.getenv("PRINTIFY_SHOP_ID")
-BLUEPRINT_ID = int(os.getenv("BLUEPRINT_ID"))
-PRINT_PROVIDER_ID = int(os.getenv("PRINT_PROVIDER_ID"))
+API_KEY     = os.getenv("PRINTIFY_API_KEY")
+SHOP_ID     = os.getenv("PRINTIFY_SHOP_ID")
+PROVIDER_ID = 29  # Monster Digital
 
 HEADERS = {
     "Authorization": f"Bearer {API_KEY}",
     "Content-Type": "application/json"
 }
 
-DESIGNS_DIR = "designs"
+DESIGNS_DIR   = "designs"
 MANIFEST_PATH = os.path.join(DESIGNS_DIR, "manifest.json")
 
+# Product types: 6 tees + 4 hoodies per batch of 10
+BLUEPRINTS = {
+    "tee":    {"id": 6,  "name": "Tee",    "price": 2299},
+    "hoodie": {"id": 77, "name": "Hoodie", "price": 3999},
+}
 
-def upload_image(image_path):
-    """Upload a local image file to Printify's media library and return its image ID."""
-    with open(image_path, "rb") as f:
-        encoded = base64.b64encode(f.read()).decode("utf-8")
+# Colors available for each blueprint (verified against Monster Digital)
+COLORS = {
+    "tee": [
+        "Black", "White", "Navy", "Red", "Royal",
+        "Sport Grey", "Maroon", "Forest Green",
+        "Sand", "Light Blue",
+    ],
+    "hoodie": [
+        "Black", "Navy", "Charcoal", "Forest Green",
+        "Dark Heather", "Ash", "Carolina Blue",
+        "Heather Navy", "Gold", "Maroon",
+    ],
+}
 
-    response = requests.post(
-        "https://api.printify.com/v1/uploads/images.json",
-        headers=HEADERS,
-        json={
-            "file_name": os.path.basename(image_path),
-            "contents": encoded
-        }
-    )
-    response.raise_for_status()
-    return response.json()["id"]
+# Always include M + L, randomly add 2 more
+CORE_SIZES     = {"m", "l"}
+OPTIONAL_SIZES = ["s", "xl", "xs"]
 
 
-def get_variants():
-    """Fetch available variants (sizes/colors) for this blueprint + provider combo.
-    Selects up to 6 popular colors (one Medium-size variant each) to stay within
-    eBay's monthly selling limit, which counts every variant against your quota."""
+def build_product_assignments(total):
+    """6 tees + 4 hoodies, shuffled randomly."""
+    n_hoodies = max(1, round(total * 0.4))
+    n_tees    = total - n_hoodies
+    types = ["tee"] * n_tees + ["hoodie"] * n_hoodies
+    random.shuffle(types)
+    return types
 
-    PREFERRED_COLORS = ["Black", "White", "Navy", "Sport Grey", "Maroon", "Royal"]
 
-    response = requests.get(
-        f"https://api.printify.com/v1/catalog/blueprints/{BLUEPRINT_ID}/print_providers/{PRINT_PROVIDER_ID}/variants.json",
+def get_variants(product_type):
+    """Get 6 random colors × (M, L + 2 random sizes) for the given product type."""
+    bp_id        = BLUEPRINTS[product_type]["id"]
+    color_pool   = COLORS[product_type]
+    chosen_colors = random.sample(color_pool, min(6, len(color_pool)))
+    extra_sizes   = set(random.sample(OPTIONAL_SIZES, 2))
+    active_sizes  = CORE_SIZES | extra_sizes
+
+    r = requests.get(
+        f"https://api.printify.com/v1/catalog/blueprints/{bp_id}/print_providers/{PROVIDER_ID}/variants.json",
         headers=HEADERS
     )
-    response.raise_for_status()
-    all_variants = response.json()["variants"]
+    r.raise_for_status()
+    all_variants = r.json()["variants"]
 
-    # Group by color, picking one size per color (preferring Medium)
-    by_color = {}
+    selected = []
     for v in all_variants:
         parts = v["title"].split("/")
         color = parts[0].strip() if len(parts) > 1 else v["title"].strip()
-        size_part = parts[1].strip() if len(parts) > 1 else ""
+        size  = parts[1].strip().lower() if len(parts) > 1 else ""
+        if (any(color.lower() == c.lower() for c in chosen_colors)
+                and size in active_sizes):
+            selected.append(v)
 
-        if color not in by_color:
-            by_color[color] = v
-        elif size_part.lower() in ("m", "medium"):
-            by_color[color] = v
-
-    # Now filter down to just our preferred colors, in that order
-    selected = []
-    for preferred in PREFERRED_COLORS:
-        for color_name, variant in by_color.items():
-            if preferred.lower() == color_name.lower():
-                selected.append(variant)
-                break
-
-    if not selected:
-        print(f"  WARNING: none of the preferred colors matched. Falling back to first 6 available.")
-        selected = list(by_color.values())[:6]
-
-    print(f"  Selected {len(selected)} color variants: {', '.join(v['title'] for v in selected)}")
+    print(f"  Colors: {', '.join(chosen_colors)}")
+    print(f"  Sizes: {', '.join(sorted(active_sizes))}")
+    print(f"  Variants selected: {len(selected)}")
     return selected
 
 
-def create_draft_product(image_id, variants, title, slogan):
-    """Create a draft product on Printify using the uploaded image."""
+def upload_image(image_path):
+    """Upload image to Printify media library, return image ID."""
+    with open(image_path, "rb") as f:
+        encoded = base64.b64encode(f.read()).decode("utf-8")
+    r = requests.post(
+        "https://api.printify.com/v1/uploads/images.json",
+        headers=HEADERS,
+        json={"file_name": os.path.basename(image_path), "contents": encoded}
+    )
+    r.raise_for_status()
+    return r.json()["id"]
 
-    selected_variant_ids = [v["id"] for v in variants]
 
-    description = f"{slogan} — a print-on-demand design from Urban Vault." if slogan else \
-                  f"A unique design from Urban Vault."
+def build_print_areas(image_id, variant_ids, placement):
+    """Front-only print. Scale adapts to placement intent."""
+    p = placement.lower()
+    if "waist" in p or "oversized" in p:
+        scale = 0.95
+    elif "small" in p or "left chest" in p:
+        scale = 0.35
+    elif "banner" in p or "horizontal" in p:
+        scale = 0.85
+    else:
+        scale = 0.80
+
+    return [{
+        "variant_ids": variant_ids,
+        "placeholders": [{
+            "position": "front",
+            "images": [{
+                "id": image_id,
+                "x": 0.5,
+                "y": 0.5,
+                "scale": scale,
+                "angle": 0
+            }]
+        }]
+    }]
+
+
+def create_draft(image_id, variants, title, slogan, placement, product_type):
+    """Create a draft product on Printify."""
+    bp       = BLUEPRINTS[product_type]
+    bp_id    = bp["id"]
+    price    = bp["price"]
+    type_label = bp["name"]
+
+    variant_ids  = [v["id"] for v in variants]
+    full_title   = f"{title} | {type_label}"
+    description  = (
+        f"{slogan} — Urban Vault original design. Premium quality {type_label.lower()}. Great gift idea."
+        if slogan else
+        f"Urban Vault original graphic {type_label.lower()}. Premium quality print. Great gift idea."
+    )
 
     payload = {
-        "title": title,
+        "title": full_title,
         "description": description,
-        "blueprint_id": BLUEPRINT_ID,
-        "print_provider_id": PRINT_PROVIDER_ID,
+        "blueprint_id": bp_id,
+        "print_provider_id": PROVIDER_ID,
         "variants": [
-            {"id": vid, "price": 2499, "is_enabled": True}
-            for vid in selected_variant_ids
+            {"id": vid, "price": price, "is_enabled": True}
+            for vid in variant_ids
         ],
-        "print_areas": [
-            {
-                "variant_ids": selected_variant_ids,
-                "placeholders": [
-                    {
-                        "position": "front",
-                        "images": [
-                            {
-                                "id": image_id,
-                                "x": 0.5,
-                                "y": 0.5,
-                                "scale": 0.8,
-                                "angle": 0
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
+        "print_areas": build_print_areas(image_id, variant_ids, placement)
     }
 
-    response = requests.post(
+    r = requests.post(
         f"https://api.printify.com/v1/shops/{SHOP_ID}/products.json",
         headers=HEADERS,
         json=payload
     )
 
-    if response.status_code not in (200, 201):
-        print(f"  ERROR creating product: {response.status_code} {response.text[:200]}")
+    if r.status_code not in (200, 201):
+        print(f"  ERROR {r.status_code}: {r.text[:300]}")
         return None
 
-    return response.json()
+    return r.json()
 
 
 if __name__ == "__main__":
@@ -139,37 +172,53 @@ if __name__ == "__main__":
         designs = json.load(f)
 
     if not designs:
-        print("No designs found in manifest. Nothing to upload.")
+        print("No designs in manifest.")
         exit(0)
 
-    print(f"Fetching variants for blueprint {BLUEPRINT_ID} / provider {PRINT_PROVIDER_ID}...")
-    variants = get_variants()
-    print(f"Using {len(variants)} color variants for each product.\n")
+    assignments = build_product_assignments(len(designs))
+    tee_count    = assignments.count("tee")
+    hoodie_count = assignments.count("hoodie")
+    print(f"Product plan: {tee_count} tees + {hoodie_count} hoodies\n")
+    print(f"Uploading {len(designs)} designs to Printify...\n")
 
-    print(f"Uploading {len(designs)} designs to Printify as drafts...\n")
+    created = 0
 
-    created_count = 0
-
-    for i, design in enumerate(designs, 1):
-        image_path = os.path.join(DESIGNS_DIR, design["filename"])
+    for i, design in enumerate(designs):
+        image_path   = os.path.join(DESIGNS_DIR, design["filename"])
+        product_type = assignments[i]
+        placement    = design.get("placement", "front center")
 
         if not os.path.exists(image_path):
-            print(f"[{i}/{len(designs)}] SKIP - file not found: {image_path}")
+            print(f"[{i+1}/{len(designs)}] SKIP — file not found: {image_path}")
             continue
 
-        print(f"[{i}/{len(designs)}] {design['title']}")
+        print(f"[{i+1}/{len(designs)}] {design['title']}")
+        print(f"  Type: {BLUEPRINTS[product_type]['name']} (blueprint {BLUEPRINTS[product_type]['id']})")
+        print(f"  Placement: {placement}")
 
         try:
+            variants = get_variants(product_type)
+            if not variants:
+                print("  ERROR: no variants matched — skipping.")
+                continue
+
             image_id = upload_image(image_path)
-            product = create_draft_product(image_id, variants, design["title"], design["slogan"])
+            product  = create_draft(
+                image_id, variants,
+                design["title"], design.get("slogan", ""),
+                placement, product_type
+            )
 
             if product:
-                print(f"  Created draft. Product ID: {product['id']}")
-                created_count += 1
+                print(f"  Draft created. ID: {product['id']}")
+                created += 1
             else:
-                print(f"  Failed to create draft.")
+                print(f"  Failed.")
+
         except Exception as e:
             print(f"  ERROR: {e}")
 
-    print(f"\nDone. {created_count}/{len(designs)} draft products created.")
-    print("Go check your Printify dashboard to review and publish.")
+        print()
+
+    print(f"Done. {created}/{len(designs)} drafts created.")
+    print("Review and publish from your Printify dashboard.")

@@ -2,54 +2,84 @@
   "niche": "funny gym and fitness humor",
   "concepts": [
     {
-      "title": "Will Lift For Pizza Funny Gym T-Shirt",
-      "slogan": "Will Lift For Pizza",
-      "image_prompt": "Flat vector illustration style, bold simple shapes. A cartoon barbell on one side and a happy slice of pizza on the other, connected by an arrow or thought bubble. Use 3-4 flat colors like red, yellow, grey, black. White or transparent background. No photorealism. Print-ready for apparel."
+      "title": "Funny Bicep Flex Streetwear Gym Graphic Tee",
+      "slogan": "",
+      "style": "bold streetwear graphic \u2014 Supreme-style stacked typography, heavy black outlines, urban hype aesthetic, like a 90s skate brand",
+      "placement": "front left chest \u2014 small bold logo style",
+      "has_text": false,
+      "image_prompt": "Supreme box logo style artwork, a small, bold, highly stylized graphic of a flexing bicep where cartoonishly exaggerated, thick veins form the shape of a tiny, disgruntled anthropomorphic barbell. Heavy black outlines, urban hype aesthetic, like a 90s skate brand. Color palette: Jet black, concrete grey, electric yellow, blood orange. Energy/mood: Playful, energetic, rebellious. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
     },
     {
-      "title": "My Cardio Is Lifting Weights Funny Gym",
-      "slogan": "My Cardio Is Lifting Weights",
-      "image_prompt": "Flat vector illustration style, bold simple shapes. A humorous, slightly cartoonish person with sweat drops, struggling (but determined) to lift a heavy barbell. Minimal background, focusing on the figure and barbell. Use 3 flat colors, e.g., blue, grey, black. White or transparent background. No photorealism. Print-ready for apparel."
+      "title": "Retro Deadlift Skeleton Gym Humor Graphic Tee",
+      "slogan": "",
+      "style": "retro vintage distressed \u2014 worn-in 80s band tee aesthetic, grunge texture overlays, faded serif typography, like a vintage Harley Davidson shirt",
+      "placement": "front center \u2014 oversized print from chest to waist",
+      "has_text": false,
+      "image_prompt": "Vintage 80s band tee aesthetic, an oversized, distressed graphic of a stylized skeleton figure attempting to deadlift an impossibly heavy, comically bent barbell, sweat drops flying from its skull, and bones straining under the weight. Grunge texture overlays, faded look. Color palette: Faded charcoal, muted rust red, dirty cream, sepia brown. Energy/mood: Gritty, darkly humorous, nostalgic, determined. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
     },
     {
-      "title": "Resting Gym Face Funny Workout Tee",
-      "slogan": "Resting Gym Face",
-      "image_prompt": "Flat vector illustration style, bold simple shapes. A simplified, grumpy or intensely focused cartoon face with furrowed brows. Maybe a small dumbbell icon near the face or as part of the expression. Use 2-3 flat colors like black, grey, and a pop of red. White or transparent background. No photorealism. Print-ready for apparel."
+      "title": "Psychedelic Donut Bicep Fitness Graphic Tee",
+      "slogan": "",
+      "style": "psychedelic retro \u2014 70s groovy swirling shapes, sunset gradient colors, bold hand-lettering, like a vintage Grateful Dead tee",
+      "placement": "front center \u2014 wide horizontal banner across chest",
+      "has_text": false,
+      "image_prompt": "Vintage Grateful Dead tee aesthetic, a wide horizontal banner graphic featuring a whimsical donut with a halo, humorously morphing into a flexing bicep, surrounded by intricate swirling, wavy energy lines and abstract stars within a groovy 70s psychedelic landscape. Color palette: Sunset orange, deep magenta, warm yellow, sky blue, forest green, with swirled gradients. Energy/mood: Groovy, whimsical, humorous, relaxed. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
     },
     {
-      "title": "Leg Day Survivor Funny Gym Fitness Tee",
-      "slogan": "Leg Day Survivor",
-      "image_prompt": "Flat vector illustration style, bold simple shapes. A humorous, slightly limping or wobbling stick-figure or cartoon character, wearing a medal. The medal itself could have a small barbell or quad muscle icon. Use 3-4 flat colors like gold, black, red, white. White or transparent background. No photorealism. Print-ready for apparel."
+      "title": "Groovy Dumbbell Peace Sign Small Graphic Tee",
+      "slogan": "",
+      "style": "psychedelic retro \u2014 70s groovy swirling shapes, sunset gradient colors, bold hand-lettering, like a vintage Grateful Dead tee",
+      "placement": "front left chest \u2014 small bold logo style",
+      "has_text": false,
+      "image_prompt": "Vintage Grateful Dead tee aesthetic, a small, bold, stylized dumbbell icon where the weights are replaced by swirling peace signs, radiating subtle groovy energy waves. Color palette: Warm orange, sunny yellow, peace-sign green, deep purple. Energy/mood: Playful, chill, whimsical. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
     },
     {
-      "title": "Barbells Squats Funny Gym Workout T-Shirt",
-      "slogan": "The Only B.S. I Need Is Barbells & Squats",
-      "image_prompt": "Flat vector illustration style, bold simple shapes. A stack of barbells and a simplified, geometric silhouette of a person in a squatting position. The text should integrate cleanly with the graphic. Use 3 flat colors, e.g., black, grey, and a vibrant accent color like lime green. White or transparent background. No photorealism. Print-ready for apparel."
+      "title": "Trippy Muscle Donut Gains Psychedelic Graphic Tee",
+      "slogan": "",
+      "style": "psychedelic retro \u2014 70s groovy swirling shapes, sunset gradient colors, bold hand-lettering, like a vintage Grateful Dead tee",
+      "placement": "front center \u2014 oversized print from chest to waist",
+      "has_text": false,
+      "image_prompt": "Vintage Grateful Dead tee aesthetic, an oversized, full-body graphic of a highly stylized, gender-neutral muscular figure, lifting a giant barbell whose plates are swirling psychedelic donuts, all set against a backdrop of melting, wavy gym equipment and radiant sunbursts. Color palette: Vibrant fuchsia, electric blue, sunny yellow, lime green, tangerine, with swirling gradient transitions. Energy/mood: Euphoric, humorous, whimsical, trippy. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
     },
     {
-      "title": "I Flexed Sleeves Fell Off Funny Gym",
-      "slogan": "I Flexed And The Sleeves Fell Off",
-      "image_prompt": "Flat vector illustration style, bold simple shapes. A cartoon arm with exaggerated, muscular biceps, humorously bursting out of a torn t-shirt sleeve. Focus on the arm and sleeve. Use 3 flat colors like skin tone, t-shirt color (e.g., blue), and black outline. White or transparent background. No photorealism. Print-ready for apparel."
+      "title": "Edgy Runner Gym Hype Streetwear Graphic Tee",
+      "slogan": "",
+      "style": "bold streetwear graphic \u2014 Supreme-style stacked typography, heavy black outlines, urban hype aesthetic, like a 90s skate brand",
+      "placement": "front left chest \u2014 small bold logo style",
+      "has_text": false,
+      "image_prompt": "Supreme box logo style artwork, a small, bold, stylized graphic of a cartoonish, sweating sneaker with wings, perpetually running across a broken stopwatch. Thick black outlines, urban hype aesthetic, slightly distressed texture. Color palette: Deep crimson red, charcoal grey, pure white, stark black. Energy/mood: Edgy, determined, slightly aggressive, humorous. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
     },
     {
-      "title": "Gym Is My Therapy Funny Fitness Shirt",
-      "slogan": "Gym Is My Therapy",
-      "image_prompt": "Flat vector illustration style, bold simple shapes. A stylized barbell or kettlebell replacing a therapist's couch or a thinking head silhouette. Could also be a thought bubble with a barbell inside. Use 2-3 flat colors like green, grey, and black. White or transparent background. No photorealism. Print-ready for apparel."
+      "title": "Gothic Barbell Skull Gym Dramatic Graphic Tee",
+      "slogan": "",
+      "style": "gothic blackletter \u2014 ornate medieval typography, dark dramatic aesthetic, like a metal band tee crossed with luxury fashion",
+      "placement": "front center \u2014 wide horizontal banner across chest",
+      "has_text": false,
+      "image_prompt": "Metal band tee crossed with luxury fashion aesthetic, a wide horizontal banner graphic depicting a highly ornate, gothic-style barbell with intricate skull motifs on the weight plates and medieval spikes on the bar, surrounded by dramatic smoke tendrils and stylized, thorny vines. Dark, luxurious aesthetic. Color palette: Deep crimson, dark charcoal, antique gold, bone white. Energy/mood: Dramatic, powerful, slightly morbid humor, luxurious. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
     },
     {
-      "title": "Fitness Enthusiast Warning Gym Humor Tee",
-      "slogan": "Warning: May Spontaneously Talk About Fitness",
-      "image_prompt": "Flat vector illustration style, bold simple shapes. A bold, yellow triangular warning sign icon. Inside the triangle, a simplified speech bubble with a dumbbell or flexed arm icon. Use 3 flat colors: yellow, black, and white. White or transparent background. No photorealism. Print-ready for apparel."
+      "title": "Y2K Chrome Dumbbell Small Logo Graphic Tee",
+      "slogan": "",
+      "style": "Y2K chrome and metal \u2014 shiny metallic text, chrome bubble letters, holographic aesthetic, like early 2000s hip hop merch",
+      "placement": "front left chest \u2014 small bold logo style",
+      "has_text": false,
+      "image_prompt": "Early 2000s hip hop merch aesthetic, a small, highly detailed chrome-plated dumbbell, with exaggerated metallic gleam and subtle holographic rainbow reflections, rendered in a shiny Y2K bubble aesthetic. Color palette: Silver chrome, holographic rainbow, deep shadow black. Energy/mood: Flashy, confident, nostalgic, cool. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
     },
     {
-      "title": "Funny Workout Tacos Gym Food Humor Shirt",
-      "slogan": "I Workout So I Can Eat More Tacos",
-      "image_prompt": "Flat vector illustration style, bold simple shapes. A happy, cartoon taco character flexing a tiny muscle, next to a simplified dumbbell. The design should be playful and energetic. Use 3-4 flat colors like orange, green, brown, and black. White or transparent background. No photorealism. Print-ready for apparel."
+      "title": "Metallic Muscle Flex Y2K Gym Graphic Tee",
+      "slogan": "",
+      "style": "Y2K chrome and metal \u2014 shiny metallic text, chrome bubble letters, holographic aesthetic, like early 2000s hip hop merch",
+      "placement": "front center \u2014 oversized print from chest to waist",
+      "has_text": false,
+      "image_prompt": "Early 2000s hip hop merch aesthetic, an oversized, full-body graphic of a highly stylized, gender-neutral muscular figure, sculpted entirely from reflective chrome, flexing dramatically with exaggerated muscles, surrounded by radiating holographic light bursts and digital matrix-style lines. Color palette: Polished silver, electric blue highlights, iridescent purple, dark metallic grey, holographic rainbow. Energy/mood: Bold, confident, futuristic, powerful, nostalgic. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
     },
     {
-      "title": "Post-Workout Snack Funny Gym Humor T-Shirt",
-      "slogan": "I'm Just Here For The Post-Workout Snack",
-      "image_prompt": "Flat vector illustration style, bold simple shapes. A humorous, slightly lazy-looking cartoon person (maybe slumped) happily holding a snack bar or piece of fruit, with a small, neglected dumbbell nearby. Use 3-4 flat colors for the character, snack, and dumbbell. White or transparent background. No photorealism. Print-ready for apparel."
+      "title": "Shiny Protein Tub Y2K Funny Gym Graphic Tee",
+      "slogan": "",
+      "style": "Y2K chrome and metal \u2014 shiny metallic text, chrome bubble letters, holographic aesthetic, like early 2000s hip hop merch",
+      "placement": "front center \u2014 large graphic filling chest area",
+      "has_text": false,
+      "image_prompt": "Early 2000s hip hop merch aesthetic, a large, centered graphic depicting a massive, gleaming chrome protein powder tub, with a holographic 'nutrition facts' label that features a cartoonishly buff face winking, all surrounded by metallic bubble elements and digital 'sparkle' effects. Color palette: Reflective chrome, bright teal, electric pink, holographic purple, jet black. Energy/mood: Playful, boastful, energetic, nostalgic. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
     }
   ]
 }
