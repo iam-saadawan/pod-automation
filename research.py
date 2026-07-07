@@ -1,7 +1,7 @@
 import os
 import json
 import random
-from time import time
+import time
 import requests
 from urllib.parse import quote_plus
 from dotenv import load_dotenv
@@ -40,14 +40,14 @@ PLACEMENTS = [
 
 # Visual style directions
 DESIGN_STYLES = [
-    "bold streetwear graphic — Supreme-style stacked typography, heavy black outlines, urban hype aesthetic, like a 90s skate brand",
-    "expressive cartoon character — anime/Ben10 style character with attitude, dynamic action pose, bold cel-shading, vibrant flat colors, like 2000s Cartoon Network",
-    "retro vintage distressed — worn-in 80s band tee aesthetic, grunge texture overlays, faded serif typography, like a vintage Harley Davidson shirt",
+    "bold streetwear graphic — stacked block typography, heavy black outlines, urban hype aesthetic, like a 90s skate brand",
+    "expressive cartoon character — anime style character with attitude, dynamic action pose, bold cel-shading, vibrant flat colors, like 2000s Saturday morning cartoons",
+    "retro vintage distressed — worn-in 80s biker/band tee aesthetic, grunge texture overlays, faded serif typography, cracked-print look",
     "Y2K chrome and metal — shiny metallic text, chrome bubble letters, holographic aesthetic, like early 2000s hip hop merch",
-    "Japanese streetwear — clean minimal kanji + bold graphic, Harajuku aesthetic, high contrast, like a BAPE or A Bathing Ape design",
+    "Japanese streetwear — clean minimal kanji + bold graphic, Harajuku aesthetic, high contrast, tattoo-flash inspired",
     "gothic blackletter — ornate medieval typography, dark dramatic aesthetic, like a metal band tee crossed with luxury fashion",
-    "psychedelic retro — 70s groovy swirling shapes, sunset gradient colors, bold hand-lettering, like a vintage Grateful Dead tee",
-    "minimalist bold — one powerful graphic element, maximum negative space, like a modern streetwear drop",
+    "psychedelic retro — 70s groovy swirling shapes, sunset gradient colors, bold hand-lettering, like a vintage rock concert poster",
+    "minimalist bold — one powerful graphic element with dynamic pose or motion, maximum negative space, like a modern streetwear drop",
 ]
 
 
@@ -96,6 +96,13 @@ Each concept has a pre-assigned visual style and placement. You MUST follow them
 STYLE + PLACEMENT ASSIGNMENTS:
 {chr(10).join(f"{i+1}. STYLE: {a['style']} | PLACEMENT: {a['placement']}" for i, a in enumerate(assignments))}
 
+CRITICAL RULE — NEVER reference or reproduce any real brand, logo, wordmark, or company name (e.g. Supreme, Harley Davidson, BAPE, Nike, any real company) anywhere in title, style, or image_prompt. Use only generic aesthetic descriptions. This is a legal requirement — trademarked content cannot be sold.
+
+CRITICAL RULE — NEVER design a single static object floating alone (e.g. just "a hammer", just "a paw print", just "a coffee cup"). That reads as boring clipart and nobody buys it. Every concept MUST have a SCENE: an action, a pose, a collision, an environment, or a character with attitude built around the subject.
+   BAD (reject this): "a hammer" / "a paw print" / "a coffee cup icon"
+   GOOD: "a battle-worn hammer mid-swing smashing through a cracked concrete wall, sparks and debris flying, dramatic low angle" / "a snarling wolf mid-howl standing on a cliff edge in a lightning storm" / "a steaming coffee cup with a skeleton hand gripping it, cracked mug, dripping coffee like blood"
+   Think of it like a tattoo flash sheet or a metal band tee — always motion, drama, or character, never a flat icon.
+
 For each concept provide:
 1. "title" — eBay product title (max 10 words, SEO-optimized, include keywords like Funny/Graphic/Streetwear/Tee)
 2. Pure graphic design ONLY — absolutely NO text, NO words, NO letters, NO numbers anywhere in the image
@@ -105,7 +112,7 @@ For each concept provide:
 6. "has_text" — always false
 7. "image_prompt" — a HIGHLY DETAILED prompt for Flux image AI. Must include ALL of:
    - Exact visual style (name the aesthetic reference e.g. "Ben10 cartoon style", "Supreme box logo style")
-   - Specific subject matter (what characters/objects/scenes exactly)
+   - A concrete SCENE per the CRITICAL RULE above — subject + action/pose + environment or interacting element, not a bare object
    - If has_text is true: exact slogan text, typography style, where text sits relative to graphic
    - Color palette (name 3-5 specific colors e.g. "fire red, jet black, cream white")
    - Energy/mood (aggressive, nostalgic, funny, cool, rebellious)
@@ -151,10 +158,10 @@ if __name__ == "__main__":
     concepts = get_design_concepts(niche, ebay_trends)
 
     for i, c in enumerate(concepts, 1):
-        print(f"{i}. {c['title']}")
-        print(f"   Slogan: {c['slogan'] or '(graphic only)'}")
-        print(f"   Style: {c['style'][:70]}...")
-        print(f"   Placement: {c['placement']}")
+        print(f"{i}. {c.get('title', 'Untitled')}")
+        print(f"   Slogan: {c.get('slogan') or '(graphic only)'}")
+        print(f"   Style: {c.get('style', '')[:70]}...")
+        print(f"   Placement: {c.get('placement', 'front center')}")
         print()
 
     with open("niches.json", "w") as f:

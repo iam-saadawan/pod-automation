@@ -1,85 +1,75 @@
 {
-  "niche": "funny gym and fitness humor",
+  "niche": "sarcastic introvert humor",
   "concepts": [
     {
-      "title": "Funny Bicep Flex Streetwear Gym Graphic Tee",
-      "slogan": "",
-      "style": "bold streetwear graphic \u2014 Supreme-style stacked typography, heavy black outlines, urban hype aesthetic, like a 90s skate brand",
-      "placement": "front left chest \u2014 small bold logo style",
-      "has_text": false,
-      "image_prompt": "Supreme box logo style artwork, a small, bold, highly stylized graphic of a flexing bicep where cartoonishly exaggerated, thick veins form the shape of a tiny, disgruntled anthropomorphic barbell. Heavy black outlines, urban hype aesthetic, like a 90s skate brand. Color palette: Jet black, concrete grey, electric yellow, blood orange. Energy/mood: Playful, energetic, rebellious. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
-    },
-    {
-      "title": "Retro Deadlift Skeleton Gym Humor Graphic Tee",
-      "slogan": "",
-      "style": "retro vintage distressed \u2014 worn-in 80s band tee aesthetic, grunge texture overlays, faded serif typography, like a vintage Harley Davidson shirt",
-      "placement": "front center \u2014 oversized print from chest to waist",
-      "has_text": false,
-      "image_prompt": "Vintage 80s band tee aesthetic, an oversized, distressed graphic of a stylized skeleton figure attempting to deadlift an impossibly heavy, comically bent barbell, sweat drops flying from its skull, and bones straining under the weight. Grunge texture overlays, faded look. Color palette: Faded charcoal, muted rust red, dirty cream, sepia brown. Energy/mood: Gritty, darkly humorous, nostalgic, determined. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
-    },
-    {
-      "title": "Psychedelic Donut Bicep Fitness Graphic Tee",
-      "slogan": "",
-      "style": "psychedelic retro \u2014 70s groovy swirling shapes, sunset gradient colors, bold hand-lettering, like a vintage Grateful Dead tee",
+      "title": "Funny Introvert Retro Graphic Tee - Worn Distressed Streetwear",
+      "style": "retro vintage distressed \u2014 worn-in 80s biker/band tee aesthetic, grunge texture overlays, faded serif typography, cracked-print look",
       "placement": "front center \u2014 wide horizontal banner across chest",
       "has_text": false,
-      "image_prompt": "Vintage Grateful Dead tee aesthetic, a wide horizontal banner graphic featuring a whimsical donut with a halo, humorously morphing into a flexing bicep, surrounded by intricate swirling, wavy energy lines and abstract stars within a groovy 70s psychedelic landscape. Color palette: Sunset orange, deep magenta, warm yellow, sky blue, forest green, with swirled gradients. Energy/mood: Groovy, whimsical, humorous, relaxed. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+      "image_prompt": "retro vintage distressed aesthetic, worn-in 80s biker/band tee style illustration, grunge texture overlays, cracked-print look. A lone, shadowy figure, back turned, sitting on a dilapidated throne made of broken chairs and empty coffee cups, surrounded by a swirling, abstract void. The throne is crumbling, with sparks of disinterest. Color palette: charcoal black, faded plum, distressed cream, muted teal. Energy: sarcastic, defiant, introverted. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
     },
     {
-      "title": "Groovy Dumbbell Peace Sign Small Graphic Tee",
-      "slogan": "",
-      "style": "psychedelic retro \u2014 70s groovy swirling shapes, sunset gradient colors, bold hand-lettering, like a vintage Grateful Dead tee",
-      "placement": "front left chest \u2014 small bold logo style",
-      "has_text": false,
-      "image_prompt": "Vintage Grateful Dead tee aesthetic, a small, bold, stylized dumbbell icon where the weights are replaced by swirling peace signs, radiating subtle groovy energy waves. Color palette: Warm orange, sunny yellow, peace-sign green, deep purple. Energy/mood: Playful, chill, whimsical. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
-    },
-    {
-      "title": "Trippy Muscle Donut Gains Psychedelic Graphic Tee",
-      "slogan": "",
-      "style": "psychedelic retro \u2014 70s groovy swirling shapes, sunset gradient colors, bold hand-lettering, like a vintage Grateful Dead tee",
+      "title": "Japanese Streetwear Cat Graphic Tee - Harajuku Introvert Funny",
+      "style": "Japanese streetwear \u2014 clean minimal kanji + bold graphic, Harajuku aesthetic, high contrast, tattoo-flash inspired",
       "placement": "front center \u2014 oversized print from chest to waist",
       "has_text": false,
-      "image_prompt": "Vintage Grateful Dead tee aesthetic, an oversized, full-body graphic of a highly stylized, gender-neutral muscular figure, lifting a giant barbell whose plates are swirling psychedelic donuts, all set against a backdrop of melting, wavy gym equipment and radiant sunbursts. Color palette: Vibrant fuchsia, electric blue, sunny yellow, lime green, tangerine, with swirling gradient transitions. Energy/mood: Euphoric, humorous, whimsical, trippy. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+      "image_prompt": "Japanese streetwear aesthetic, clean minimal graphic, Harajuku style, high contrast, tattoo-flash inspired illustration. A majestic, stylized black cat, mid-leap, with an expression of serene disinterest, its form outlined by a bold white stroke. Below it, a chaotic swirl of abstract, colorful human-like figures with reaching hands dissipates into smoke, completely ignored by the cat. Color palette: jet black, pure white, vibrant cherry red, cool jade green. Energy: aloof, cool, independent. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
     },
     {
-      "title": "Edgy Runner Gym Hype Streetwear Graphic Tee",
-      "slogan": "",
-      "style": "bold streetwear graphic \u2014 Supreme-style stacked typography, heavy black outlines, urban hype aesthetic, like a 90s skate brand",
-      "placement": "front left chest \u2014 small bold logo style",
-      "has_text": false,
-      "image_prompt": "Supreme box logo style artwork, a small, bold, stylized graphic of a cartoonish, sweating sneaker with wings, perpetually running across a broken stopwatch. Thick black outlines, urban hype aesthetic, slightly distressed texture. Color palette: Deep crimson red, charcoal grey, pure white, stark black. Energy/mood: Edgy, determined, slightly aggressive, humorous. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
-    },
-    {
-      "title": "Gothic Barbell Skull Gym Dramatic Graphic Tee",
-      "slogan": "",
-      "style": "gothic blackletter \u2014 ornate medieval typography, dark dramatic aesthetic, like a metal band tee crossed with luxury fashion",
-      "placement": "front center \u2014 wide horizontal banner across chest",
-      "has_text": false,
-      "image_prompt": "Metal band tee crossed with luxury fashion aesthetic, a wide horizontal banner graphic depicting a highly ornate, gothic-style barbell with intricate skull motifs on the weight plates and medieval spikes on the bar, surrounded by dramatic smoke tendrils and stylized, thorny vines. Dark, luxurious aesthetic. Color palette: Deep crimson, dark charcoal, antique gold, bone white. Energy/mood: Dramatic, powerful, slightly morbid humor, luxurious. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
-    },
-    {
-      "title": "Y2K Chrome Dumbbell Small Logo Graphic Tee",
-      "slogan": "",
-      "style": "Y2K chrome and metal \u2014 shiny metallic text, chrome bubble letters, holographic aesthetic, like early 2000s hip hop merch",
-      "placement": "front left chest \u2014 small bold logo style",
-      "has_text": false,
-      "image_prompt": "Early 2000s hip hop merch aesthetic, a small, highly detailed chrome-plated dumbbell, with exaggerated metallic gleam and subtle holographic rainbow reflections, rendered in a shiny Y2K bubble aesthetic. Color palette: Silver chrome, holographic rainbow, deep shadow black. Energy/mood: Flashy, confident, nostalgic, cool. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
-    },
-    {
-      "title": "Metallic Muscle Flex Y2K Gym Graphic Tee",
-      "slogan": "",
-      "style": "Y2K chrome and metal \u2014 shiny metallic text, chrome bubble letters, holographic aesthetic, like early 2000s hip hop merch",
+      "title": "Retro Distressed Skull Graphic Tee - Funny Introvert Streetwear",
+      "style": "retro vintage distressed \u2014 worn-in 80s biker/band tee aesthetic, grunge texture overlays, faded serif typography, cracked-print look",
       "placement": "front center \u2014 oversized print from chest to waist",
       "has_text": false,
-      "image_prompt": "Early 2000s hip hop merch aesthetic, an oversized, full-body graphic of a highly stylized, gender-neutral muscular figure, sculpted entirely from reflective chrome, flexing dramatically with exaggerated muscles, surrounded by radiating holographic light bursts and digital matrix-style lines. Color palette: Polished silver, electric blue highlights, iridescent purple, dark metallic grey, holographic rainbow. Energy/mood: Bold, confident, futuristic, powerful, nostalgic. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+      "image_prompt": "retro vintage distressed aesthetic, worn-in 80s biker/band tee style illustration, grunge texture overlays, cracked-print look. A stylized, distressed human skull wearing oversized, retro noise-canceling headphones, with a single, glowing eye rolling sarcastically. The skull is engulfed by a chaotic, abstract explosion of fragmented speech bubbles and digital noise, clearly trying to zone out. Color palette: faded bone white, deep charcoal, electric blue, distressed yellow. Energy: sarcastic, overwhelmed, defiant. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
     },
     {
-      "title": "Shiny Protein Tub Y2K Funny Gym Graphic Tee",
-      "slogan": "",
-      "style": "Y2K chrome and metal \u2014 shiny metallic text, chrome bubble letters, holographic aesthetic, like early 2000s hip hop merch",
+      "title": "Anime Introvert Funny Graphic Tee - 2000s Cartoon Streetwear",
+      "style": "expressive cartoon character \u2014 anime style character with attitude, dynamic action pose, bold cel-shading, vibrant flat colors, like 2000s Saturday morning cartoons",
       "placement": "front center \u2014 large graphic filling chest area",
       "has_text": false,
-      "image_prompt": "Early 2000s hip hop merch aesthetic, a large, centered graphic depicting a massive, gleaming chrome protein powder tub, with a holographic 'nutrition facts' label that features a cartoonishly buff face winking, all surrounded by metallic bubble elements and digital 'sparkle' effects. Color palette: Reflective chrome, bright teal, electric pink, holographic purple, jet black. Energy/mood: Playful, boastful, energetic, nostalgic. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+      "image_prompt": "expressive anime style cartoon character, dynamic action pose, bold cel-shading, vibrant flat colors, like 2000s Saturday morning cartoons. A hooded character, with the hoodie pulled tight, actively attempting to disappear into a deep, solid shadow on the left side of the frame, one eye peeking out sarcastically. On the right, a blindingly bright, chaotic vortex of smiling, waving, generic 'happy' people swirls, contrasted by the character's dark retreat. Color palette: midnight blue, lime green, bright yellow, stark white. Energy: sarcastic, elusive, introverted. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+    },
+    {
+      "title": "Japanese Streetwear Book Graphic Tee - Harajuku Introvert Tee",
+      "style": "Japanese streetwear \u2014 clean minimal kanji + bold graphic, Harajuku aesthetic, high contrast, tattoo-flash inspired",
+      "placement": "front center \u2014 oversized print from chest to waist",
+      "has_text": false,
+      "image_prompt": "Japanese streetwear aesthetic, clean minimal graphic, Harajuku style, high contrast, tattoo-flash inspired illustration. A stylized, open book with pages swirling outwards like a solid, protective shield. Inside the book, a serene, detailed miniature world of a cozy room with a single chair is visible. Outside the book's barrier, abstract, thorny vines with reaching hands try to penetrate the swirling pages. Color palette: deep indigo, antique gold, stark white, blood red. Energy: peaceful, defiant, protective. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+    },
+    {
+      "title": "Retro Distressed Armchair Graphic Tee - Funny Introvert Streetwear",
+      "style": "retro vintage distressed \u2014 worn-in 80s biker/band tee aesthetic, grunge texture overlays, faded serif typography, cracked-print look",
+      "placement": "front center \u2014 large graphic filling chest area",
+      "has_text": false,
+      "image_prompt": "retro vintage distressed aesthetic, worn-in 80s biker/band tee style illustration, grunge texture overlays, cracked-print look. A lone, stylized armchair, battered and worn, perched precariously on a jagged, isolated mountain peak. Below, a vast, turbulent sea of abstract, faceless crowds churns, with lightning striking dramatically in the distance. The armchair is the defiant hero, symbolizing solitude. Color palette: sepia brown, stormy grey, faded rust, dull gold. Energy: epic, solitary, resilient. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+    },
+    {
+      "title": "Y2K Chrome Holographic Graphic Tee - Funny Introvert Streetwear",
+      "style": "Y2K chrome and metal \u2014 shiny metallic text, chrome bubble letters, holographic aesthetic, like early 2000s hip hop merch",
+      "placement": "front center \u2014 wide horizontal banner across chest",
+      "has_text": false,
+      "image_prompt": "Y2K chrome and metal aesthetic, shiny metallic elements, chrome bubble letters style, holographic aesthetic, like early 2000s hip hop merch illustration. A chrome-plated, holographic 'DO NOT DISTURB' door hanger (designed as a generic icon, no text), glowing with a vibrant purple-to-teal gradient, dramatically shattering into digital pixel fragments as it impacts a wall made of shimmering, glitching social media icons. Energy: aggressive, futuristic, rebellious. Color palette: chrome silver, electric purple, neon teal, glitching yellow. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+    },
+    {
+      "title": "Anime Mute Button Graphic Tee - Funny Introvert Streetwear Cartoon",
+      "style": "expressive cartoon character \u2014 anime style character with attitude, dynamic action pose, bold cel-shading, vibrant flat colors, like 2000s Saturday morning cartoons",
+      "placement": "front center \u2014 large graphic filling chest area",
+      "has_text": false,
+      "image_prompt": "expressive anime style cartoon character, dynamic action pose, bold cel-shading, vibrant flat colors, like 2000s Saturday morning cartoons. An anime-style character with wide, exasperated eyes and an attitude of being fed up, holding a giant, comically oversized 'mute' button (designed as a generic icon, no text). The character is poised to slam the button down on a swirling, vibrant vortex of tiny, chattering cartoon mouths and speech bubbles that are overwhelming them. Color palette: vivid magenta, cyan blue, charcoal grey, pure white. Energy: exasperated, funny, relatable. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+    },
+    {
+      "title": "Psychedelic Retro Introvert Graphic Tee - 70s Groovy Streetwear",
+      "style": "psychedelic retro \u2014 70s groovy swirling shapes, sunset gradient colors, bold hand-lettering, like a vintage rock concert poster",
+      "placement": "front center \u2014 wide horizontal banner across chest",
+      "has_text": false,
+      "image_prompt": "psychedelic retro aesthetic, 70s groovy swirling shapes, sunset gradient colors, vintage rock concert poster style illustration. A stylized, cosmic-level beanbag chair, adorned with swirling paisley patterns, floating serenely through a nebula of sunset gradients (orange, pink, yellow) and groovy stars. Abstract, chaotic sound waves and fragmented faces dissipate into the cosmic dust around the tranquil chair. Color palette: sunset orange, deep fuchsia, golden yellow, cosmic violet. Energy: peaceful, trippy, escapist. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+    },
+    {
+      "title": "Retro Distressed Blanket Fort Graphic Tee - Funny Introvert Tee",
+      "style": "retro vintage distressed \u2014 worn-in 80s biker/band tee aesthetic, grunge texture overlays, faded serif typography, cracked-print look",
+      "placement": "front center \u2014 large graphic filling chest area",
+      "has_text": false,
+      "image_prompt": "retro vintage distressed aesthetic, worn-in 80s biker/band tee style illustration, grunge texture overlays, cracked-print look. A battle-worn, distressed fortress-like blanket fort, complete with a 'drawbridge' entrance made of crumpled books. The fort stands defiantly against a turbulent, stormy background of abstract, swirling social chaos. A small, glowing window on the fort reveals a cozy, warm interior. Color palette: army green, faded brown, distressed grey, soft glowing amber. Energy: defensive, cozy, introverted. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
     }
   ]
 }
