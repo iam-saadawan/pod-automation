@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "urban-vault-theme-dev",
+      "runtimeExecutable": "shopify",
+      "runtimeArgs": ["theme", "dev", "--path", "/Users/saad/urban-vault-theme", "--store", "jmxvzh-87.myshopify.com", "--port", "9292"],
+      "port": 9292
+    }
+  ]
+}
