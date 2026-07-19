@@ -1,75 +1,85 @@
 {
-  "niche": "sarcastic introvert humor",
+  "niche": "mechanical keyboard typing enthusiast",
   "concepts": [
     {
-      "title": "Funny Introvert Retro Graphic Tee - Worn Distressed Streetwear",
-      "style": "retro vintage distressed \u2014 worn-in 80s biker/band tee aesthetic, grunge texture overlays, faded serif typography, cracked-print look",
-      "placement": "front center \u2014 wide horizontal banner across chest",
+      "title": "Keyboard Journey Badge Tee - Vintage Graphic",
+      "slogan": "",
+      "style": "vintage travel badge art \u2014 circle or shield-shaped layout, retro camper or 4x4 off-road vehicle in center, thick outlines, flat fills, clean isolated emblem",
+      "placement": "front center \u2014 large graphic filling chest area",
       "has_text": false,
-      "image_prompt": "retro vintage distressed aesthetic, worn-in 80s biker/band tee style illustration, grunge texture overlays, cracked-print look. A lone, shadowy figure, back turned, sitting on a dilapidated throne made of broken chairs and empty coffee cups, surrounded by a swirling, abstract void. The throne is crumbling, with sparks of disinterest. Color palette: charcoal black, faded plum, distressed cream, muted teal. Energy: sarcastic, defiant, introverted. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+      "image_prompt": "vintage travel badge art, retro emblem graphic. A heroic, stylized individual keycap (like an 'ESC' key with a tiny adventurer's flag motif) at the center of a circular badge, with subtle, minimalist mechanical keyboard line art integrated as a background element within the badge. isolated on solid pure white background, screen-print style, flat solid color fills, thick bold black outlines, hard edges, no gradients, no glow, no drop shadow, no soft airbrush, no shading, no gray smudges, no smoke, no mist, no particles, generous margin around artwork, nothing touching canvas edges, centered composition, single cohesive graphic. limited flat color palette: vintage cream, forest green, deep gold, jet black. no text, no words, no letters, no numbers, no watermark, no mockup, no t-shirt, no photo realism, no background scenery, no frame, no border"
     },
     {
-      "title": "Japanese Streetwear Cat Graphic Tee - Harajuku Introvert Funny",
-      "style": "Japanese streetwear \u2014 clean minimal kanji + bold graphic, Harajuku aesthetic, high contrast, tattoo-flash inspired",
+      "title": "Switch Lover Tattoo Flash Tee - Bold Graphic",
+      "slogan": "",
+      "style": "tattoo flash art \u2014 traditional American tattoo style, bold black outlines, limited flat color palette (3-4 colors max), clean isolated design, screen-print ready, no shading gradients",
+      "placement": "front left chest \u2014 small bold logo style",
+      "has_text": false,
+      "image_prompt": "traditional American tattoo flash art, classic tattoo illustration. A stylized mechanical keyboard switch (generic linear switch profile) drawn with bold, confident lines, adorned with a small, decorative, flowing banner wrapping around its base, and two small starbursts on either side. isolated on solid pure white background, screen-print style, flat solid color fills, thick bold black outlines, hard edges, no gradients, no glow, no drop shadow, no soft airbrush, no shading, no gray smudges, no smoke, no mist, no particles, generous margin around artwork, nothing touching canvas edges, centered composition, single cohesive graphic. limited flat color palette: cherry red, deep teal, light cream, jet black. no text, no words, no letters, no numbers, no watermark, no mockup, no t-shirt, no photo realism, no background scenery, no frame, no border"
+    },
+    {
+      "title": "Deep Dive Anime Tee - Retro Graphic",
+      "slogan": "Deep Dive Into The Keys",
+      "style": "retro anime cel \u2014 80s-90s anime aesthetic, warm flat color fills, bold confident linework, slight vintage feel but clean edges, single character portrait or bust, screen-print style",
       "placement": "front center \u2014 oversized print from chest to waist",
-      "has_text": false,
-      "image_prompt": "Japanese streetwear aesthetic, clean minimal graphic, Harajuku style, high contrast, tattoo-flash inspired illustration. A majestic, stylized black cat, mid-leap, with an expression of serene disinterest, its form outlined by a bold white stroke. Below it, a chaotic swirl of abstract, colorful human-like figures with reaching hands dissipates into smoke, completely ignored by the cat. Color palette: jet black, pure white, vibrant cherry red, cool jade green. Energy: aloof, cool, independent. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+      "has_text": true,
+      "image_prompt": "80s-90s retro anime cel art, vintage anime portrait. A bust of an androgynous anime character with intensely focused eyes, a subtle, stylized glow reflecting from an unseen RGB keyboard lighting on their face and glasses, hands out of frame. The character has slightly messy, cool-toned hair, deep in concentration. isolated on solid pure white background, screen-print style, flat solid color fills, thick bold black outlines, hard edges, no gradients, no glow, no drop shadow, no soft airbrush, no shading, no gray smudges, no smoke, no mist, no particles, generous margin around artwork, nothing touching canvas edges, centered composition, single cohesive graphic. limited flat color palette: warm peach skin tones, dark teal hair, bright cyan reflections, jet black. no text, no words, no letters, no numbers, no watermark, no mockup, no t-shirt, no photo realism, no background scenery, no frame, no border"
     },
     {
-      "title": "Retro Distressed Skull Graphic Tee - Funny Introvert Streetwear",
-      "style": "retro vintage distressed \u2014 worn-in 80s biker/band tee aesthetic, grunge texture overlays, faded serif typography, cracked-print look",
-      "placement": "front center \u2014 oversized print from chest to waist",
+      "title": "Precision Input Anime Tee - Retro Graphic",
+      "slogan": "",
+      "style": "retro anime cel \u2014 80s-90s anime aesthetic, warm flat color fills, bold confident linework, slight vintage feel but clean edges, single character portrait or bust, screen-print style",
+      "placement": "front left chest \u2014 small bold logo style",
       "has_text": false,
-      "image_prompt": "retro vintage distressed aesthetic, worn-in 80s biker/band tee style illustration, grunge texture overlays, cracked-print look. A stylized, distressed human skull wearing oversized, retro noise-canceling headphones, with a single, glowing eye rolling sarcastically. The skull is engulfed by a chaotic, abstract explosion of fragmented speech bubbles and digital noise, clearly trying to zone out. Color palette: faded bone white, deep charcoal, electric blue, distressed yellow. Energy: sarcastic, overwhelmed, defiant. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+      "image_prompt": "80s-90s retro anime cel art, vintage anime illustration. A dynamic, close-up view of an anime character's hand, fingers poised mid-air with exaggerated motion lines, about to press a single, stylized, brightly glowing keycap (generic, no specific legend). isolated on solid pure white background, screen-print style, flat solid color fills, thick bold black outlines, hard edges, no gradients, no glow, no drop shadow, no soft airbrush, no shading, no gray smudges, no smoke, no mist, no particles, generous margin around artwork, nothing touching canvas edges, centered composition, single cohesive graphic. limited flat color palette: warm skin tones, vibrant magenta glow, cool gray keycap, jet black. no text, no words, no letters, no numbers, no watermark, no mockup, no t-shirt, no photo realism, no background scenery, no frame, no border"
     },
     {
-      "title": "Anime Introvert Funny Graphic Tee - 2000s Cartoon Streetwear",
-      "style": "expressive cartoon character \u2014 anime style character with attitude, dynamic action pose, bold cel-shading, vibrant flat colors, like 2000s Saturday morning cartoons",
+      "title": "Powered By Switches Cartoon Tee - Funny Graphic",
+      "slogan": "Powered By Switches & Code",
+      "style": "retro 90s-2000s cartoon \u2014 Saturday morning cartoon style, bold cel-shading, flat vibrant colors, thick confident outlines, dynamic exaggerated pose, like Powerpuff Girls or Dexter's Lab aesthetic",
       "placement": "front center \u2014 large graphic filling chest area",
-      "has_text": false,
-      "image_prompt": "expressive anime style cartoon character, dynamic action pose, bold cel-shading, vibrant flat colors, like 2000s Saturday morning cartoons. A hooded character, with the hoodie pulled tight, actively attempting to disappear into a deep, solid shadow on the left side of the frame, one eye peeking out sarcastically. On the right, a blindingly bright, chaotic vortex of smiling, waving, generic 'happy' people swirls, contrasted by the character's dark retreat. Color palette: midnight blue, lime green, bright yellow, stark white. Energy: sarcastic, elusive, introverted. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+      "has_text": true,
+      "image_prompt": "retro 90s-2000s Saturday morning cartoon style, bold cel-shaded animation. A frantic, small, lab-coated cartoon character (like a quirky inventor-type creature with goggles and multiple arms) in a dynamic, exaggerated pose, furiously typing on a simplified, colorful mechanical keyboard. Zany energy lines and cartoon sparks emanate from the keys. isolated on solid pure white background, screen-print style, flat solid color fills, thick bold black outlines, hard edges, no gradients, no glow, no drop shadow, no soft airbrush, no shading, no gray smudges, no smoke, no mist, no particles, generous margin around artwork, nothing touching canvas edges, centered composition, single cohesive graphic. limited flat color palette: bright yellow, electric blue, vibrant orange, jet black. no text, no words, no letters, no numbers, no watermark, no mockup, no t-shirt, no photo realism, no background scenery, no frame, no border"
     },
     {
-      "title": "Japanese Streetwear Book Graphic Tee - Harajuku Introvert Tee",
-      "style": "Japanese streetwear \u2014 clean minimal kanji + bold graphic, Harajuku aesthetic, high contrast, tattoo-flash inspired",
-      "placement": "front center \u2014 oversized print from chest to waist",
+      "title": "Hero Keycap Cartoon Tee - Retro Graphic",
+      "slogan": "",
+      "style": "retro 90s-2000s cartoon \u2014 Saturday morning cartoon style, bold cel-shading, flat vibrant colors, thick confident outlines, dynamic exaggerated pose, like Powerpuff Girls or Dexter's Lab aesthetic",
+      "placement": "front left chest \u2014 small bold logo style",
       "has_text": false,
-      "image_prompt": "Japanese streetwear aesthetic, clean minimal graphic, Harajuku style, high contrast, tattoo-flash inspired illustration. A stylized, open book with pages swirling outwards like a solid, protective shield. Inside the book, a serene, detailed miniature world of a cozy room with a single chair is visible. Outside the book's barrier, abstract, thorny vines with reaching hands try to penetrate the swirling pages. Color palette: deep indigo, antique gold, stark white, blood red. Energy: peaceful, defiant, protective. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+      "image_prompt": "retro 90s-2000s Saturday morning cartoon style, bold cel-shaded graphic. A single, oversized, cartoonish keycap (generic 'Enter' key shape) with a determined, wide-eyed expression and small, muscular arms flexing, as if it's a heroic figure ready for action. isolated on solid pure white background, screen-print style, flat solid color fills, thick bold black outlines, hard edges, no gradients, no glow, no drop shadow, no soft airbrush, no shading, no gray smudges, no smoke, no mist, no particles, generous margin around artwork, nothing touching canvas edges, centered composition, single cohesive graphic. limited flat color palette: vibrant red, cool gray, stark white, jet black. no text, no words, no letters, no numbers, no watermark, no mockup, no t-shirt, no photo realism, no background scenery, no frame, no border"
     },
     {
-      "title": "Retro Distressed Armchair Graphic Tee - Funny Introvert Streetwear",
-      "style": "retro vintage distressed \u2014 worn-in 80s biker/band tee aesthetic, grunge texture overlays, faded serif typography, cracked-print look",
-      "placement": "front center \u2014 large graphic filling chest area",
-      "has_text": false,
-      "image_prompt": "retro vintage distressed aesthetic, worn-in 80s biker/band tee style illustration, grunge texture overlays, cracked-print look. A lone, stylized armchair, battered and worn, perched precariously on a jagged, isolated mountain peak. Below, a vast, turbulent sea of abstract, faceless crowds churns, with lightning striking dramatically in the distance. The armchair is the defiant hero, symbolizing solitude. Color palette: sepia brown, stormy grey, faded rust, dull gold. Energy: epic, solitary, resilient. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+      "title": "Press On Sticker Tee - Pop Art Graphic",
+      "slogan": "Press On",
+      "style": "bold cartoon sticker art \u2014 thick black outlines like a die-cut sticker, vibrant flat color fills with zero gradients, clean sharp edges, exaggerated cartoon proportions, pop art energy",
+      "placement": "front left chest \u2014 small bold logo style",
+      "has_text": true,
+      "image_prompt": "bold cartoon sticker art, pop art illustration. A highly stylized, exaggerated individual keycap (generic 'Shift' key shape) with thick, clean black outlines, featuring a dynamic, visual 'thock' sound wave element emanating from its base (pure graphic, no letters). isolated on solid pure white background, screen-print style, flat solid color fills, thick bold black outlines, hard edges, no gradients, no glow, no drop shadow, no soft airbrush, no shading, no gray smudges, no smoke, no mist, no particles, generous margin around artwork, nothing touching canvas edges, centered composition, single cohesive graphic. limited flat color palette: vibrant purple, neon pink, cool light blue, jet black. no text, no words, no letters, no numbers, no watermark, no mockup, no t-shirt, no photo realism, no background scenery, no frame, no border"
     },
     {
-      "title": "Y2K Chrome Holographic Graphic Tee - Funny Introvert Streetwear",
-      "style": "Y2K chrome and metal \u2014 shiny metallic text, chrome bubble letters, holographic aesthetic, like early 2000s hip hop merch",
-      "placement": "front center \u2014 wide horizontal banner across chest",
+      "title": "Custom JDM Racer Tee - Car Sticker Graphic",
+      "slogan": "",
+      "style": "cartoon car sticker art \u2014 exaggerated proportions, thick black outlines, bold tires and lights, flat color fills, classic JDM or retro muscle car shape, pop art cartoon energy",
+      "placement": "front left chest \u2014 small bold logo style",
       "has_text": false,
-      "image_prompt": "Y2K chrome and metal aesthetic, shiny metallic elements, chrome bubble letters style, holographic aesthetic, like early 2000s hip hop merch illustration. A chrome-plated, holographic 'DO NOT DISTURB' door hanger (designed as a generic icon, no text), glowing with a vibrant purple-to-teal gradient, dramatically shattering into digital pixel fragments as it impacts a wall made of shimmering, glitching social media icons. Energy: aggressive, futuristic, rebellious. Color palette: chrome silver, electric purple, neon teal, glitching yellow. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+      "image_prompt": "cartoon car sticker art, pop art vehicle illustration. A low-slung, customized generic 'retro JDM street racer' (sports coupe style) from a slightly high, 3/4 front angle, with exaggerated wide body kit, bold oversized wheels, and simplified, clean lines. isolated on solid pure white background, screen-print style, flat solid color fills, thick bold black outlines, hard edges, no gradients, no glow, no drop shadow, no soft airbrush, no shading, no gray smudges, no smoke, no mist, no particles, generous margin around artwork, nothing touching canvas edges, centered composition, single cohesive graphic. limited flat color palette: electric blue, bright white, chrome silver, jet black. no text, no words, no letters, no numbers, no watermark, no mockup, no t-shirt, no photo realism, no background scenery, no frame, no border"
     },
     {
-      "title": "Anime Mute Button Graphic Tee - Funny Introvert Streetwear Cartoon",
-      "style": "expressive cartoon character \u2014 anime style character with attitude, dynamic action pose, bold cel-shading, vibrant flat colors, like 2000s Saturday morning cartoons",
-      "placement": "front center \u2014 large graphic filling chest area",
-      "has_text": false,
-      "image_prompt": "expressive anime style cartoon character, dynamic action pose, bold cel-shading, vibrant flat colors, like 2000s Saturday morning cartoons. An anime-style character with wide, exasperated eyes and an attitude of being fed up, holding a giant, comically oversized 'mute' button (designed as a generic icon, no text). The character is poised to slam the button down on a swirling, vibrant vortex of tiny, chattering cartoon mouths and speech bubbles that are overwhelming them. Color palette: vivid magenta, cyan blue, charcoal grey, pure white. Energy: exasperated, funny, relatable. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+      "title": "Custom Crafted Power Tee - Car Sticker Graphic",
+      "slogan": "Custom Crafted Power",
+      "style": "cartoon car sticker art \u2014 exaggerated proportions, thick black outlines, bold tires and lights, flat color fills, classic JDM or retro muscle car shape, pop art cartoon energy",
+      "placement": "front left chest \u2014 small bold logo style",
+      "has_text": true,
+      "image_prompt": "cartoon car sticker art, pop art vehicle illustration. A powerful, chunky generic 'classic American hot rod coupe' (muscle car style) with prominent side exhaust pipes and exaggerated rear tires, rendered in a bold, dynamic sticker art style, 3/4 front view. isolated on solid pure white background, screen-print style, flat solid color fills, thick bold black outlines, hard edges, no gradients, no glow, no drop shadow, no soft airbrush, no shading, no gray smudges, no smoke, no mist, no particles, generous margin around artwork, nothing touching canvas edges, centered composition, single cohesive graphic. limited flat color palette: fiery red, dark gray, bright white, jet black. no text, no words, no letters, no numbers, no watermark, no mockup, no t-shirt, no photo realism, no background scenery, no frame, no border"
     },
     {
-      "title": "Psychedelic Retro Introvert Graphic Tee - 70s Groovy Streetwear",
-      "style": "psychedelic retro \u2014 70s groovy swirling shapes, sunset gradient colors, bold hand-lettering, like a vintage rock concert poster",
-      "placement": "front center \u2014 wide horizontal banner across chest",
-      "has_text": false,
-      "image_prompt": "psychedelic retro aesthetic, 70s groovy swirling shapes, sunset gradient colors, vintage rock concert poster style illustration. A stylized, cosmic-level beanbag chair, adorned with swirling paisley patterns, floating serenely through a nebula of sunset gradients (orange, pink, yellow) and groovy stars. Abstract, chaotic sound waves and fragmented faces dissipate into the cosmic dust around the tranquil chair. Color palette: sunset orange, deep fuchsia, golden yellow, cosmic violet. Energy: peaceful, trippy, escapist. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
-    },
-    {
-      "title": "Retro Distressed Blanket Fort Graphic Tee - Funny Introvert Tee",
-      "style": "retro vintage distressed \u2014 worn-in 80s biker/band tee aesthetic, grunge texture overlays, faded serif typography, cracked-print look",
-      "placement": "front center \u2014 large graphic filling chest area",
-      "has_text": false,
-      "image_prompt": "retro vintage distressed aesthetic, worn-in 80s biker/band tee style illustration, grunge texture overlays, cracked-print look. A battle-worn, distressed fortress-like blanket fort, complete with a 'drawbridge' entrance made of crumpled books. The fort stands defiantly against a turbulent, stormy background of abstract, swirling social chaos. A small, glowing window on the fort reveals a cozy, warm interior. Color palette: army green, faded brown, distressed grey, soft glowing amber. Energy: defensive, cozy, introverted. Technical: white background, centered composition, NO watermarks, NO photo realism, print-ready vector artwork, bold outlines."
+      "title": "Wallet Cries RGB Tee - Kawaii Horror Graphic",
+      "slogan": "My Wallet Cries RGB",
+      "style": "kawaii cute horror \u2014 adorable character with creepy twist, pastel colors mixed with dark elements, bold outlines, flat fills, cute big eyes, screen-print style clean edges",
+      "placement": "front left chest \u2014 small bold logo style",
+      "has_text": true,
+      "image_prompt": "kawaii cute horror, adorable creepy cartoon. A tiny, charmingly creepy keycap-shaped monster with large, innocent (but slightly mischievous) eyes, two tiny fangs, and small spectral arms, floating playfully above a generic mechanical keyboard switch. Pastel colors contrasting with dark outlines. isolated on solid pure white background, screen-print style, flat solid color fills, thick bold black outlines, hard edges, no gradients, no glow, no drop shadow, no soft airbrush, no shading, no gray smudges, no smoke, no mist, no particles, generous margin around artwork, nothing touching canvas edges, centered composition, single cohesive graphic. limited flat color palette: soft lavender, pastel mint green, bubblegum pink, jet black. no text, no words, no letters, no numbers, no watermark, no mockup, no t-shirt, no photo realism, no background scenery, no frame, no border"
     }
   ]
 }

@@ -4,8 +4,9 @@ run_all.py
 The master conductor for the AI POD automation pipeline.
 Runs, in order:
   1. research.py  -> generates niche/design concepts via Gemini, saves niches.json
-  2. designer.py  -> generates actual images via Pollinations Flux, saves designs/*.jpg + manifest.json
-  3. uploader.py  -> uploads all images to Printify as DRAFT products
+  2. designer.py  -> generates images via Pollinations Flux + rembg, saves designs/*.png + manifest.json
+  3. upscale.py   -> upscales all designs to 4500×5400 print specs
+  4. uploader.py  -> uploads all images to Printify as DRAFT products
 
 This is the single script the Linux cron job calls every night.
 It does NOT publish anything live — every product lands as a draft for manual review.
@@ -15,7 +16,7 @@ import subprocess
 import sys
 import datetime
 
-SCRIPTS = ["research.py", "designer.py", "uploader.py"]
+SCRIPTS = ["research.py", "designer.py", "upscale.py", "uploader.py"]
 
 
 def run_script(script_name):
