@@ -1,16 +1,11 @@
 import os
 import json
 import time
-# pyrefly: ignore [missing-import]
 import numpy as np
 import requests
 from io import BytesIO
 from urllib.parse import quote
-# pyrefly: ignore [missing-import]
 from PIL import Image, ImageDraw, ImageFont
-# pyrefly: ignore [missing-import]
-from rembg import remove, new_session
-# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -18,72 +13,74 @@ load_dotenv()
 POLLINATIONS_API_KEY = os.getenv("POLLINATIONS_API_KEY")
 OUTPUT_DIR = "designs"
 
-# ── rembg session (loaded once, reused for all designs) ──────────────────────
-# isnet-general-use has noticeably better edge detection than default u2net
-REMBG_SESSION = new_session("isnet-general-use")
+# Lazy-loaded rembg session (only initialized if transparent mode is used)
+_REMBG_SESSION = None
+
+def get_rembg_session():
+    global _REMBG_SESSION
+    if _REMBG_SESSION is None:
+        from rembg import new_session
+        print("  Initializing rembg session (isnet-general-use)...")
+        _REMBG_SESSION = new_session("isnet-general-use")
+    return _REMBG_SESSION
 
 
 def build_full_prompt(concept):
-    """Build a Flux prompt using the master prompt template structure.
+    """Build a Flux prompt adapting dynamically to matched vs transparent mode.
 
-    Structure (from SKILL_BIBLE_print_on_demand.md):
-      [STYLE] → [SUBJECT] → [COMPOSITION] → [COLOR] → [LINE/EDGE] → [NEGATIVE]
-
-    The image_prompt from research.py already follows this structure, so we
-    reinforce the critical technical parts and strip anything contradictory.
+    Structure:
+      [BASE PROMPT] → [NEGATIVE/TEXT BLOCK] → [BACKGROUND/EDGE REINFORCEMENT]
     """
-    base = concept["image_prompt"]
+    base = concept.get("image_prompt", "")
+    bg_mode = concept.get("bg_mode", "matched")
+    bg_color = concept.get("bg_color", "#000000")
 
-    # NEVER ask Flux to render text — it can't do it well.
-    # Text designs get their slogans composited via Pillow after generation.
-    text_block = (
-        "This is a pure graphic illustration — absolutely no text, no words, "
-        "no letters, no numbers, no typography anywhere in the image."
-    )
+    # Anti-text rule — text is composited programmatically if needed
+    text_block = "No text, no words, no letters, no typography, no watermark, no logo."
 
-    # Reinforced technical requirements (the non-negotiable rembg-survival kit)
-    # Banning grey smudges, shading, face shadows, and textures directly fixes Flux artifacts.
-    tech_block = (
-        "isolated on solid pure white #FFFFFF background, "
-        "centered composition, single cohesive graphic, "
-        "generous margin around artwork, nothing touching canvas edges, "
-        "screen-print style, thick bold black outlines, flat solid color fills, "
-        "hard clean edges, no gradients, no glow, no drop shadow, no soft airbrush, "
-        "no shading, no gray smudges, no dirty textures, no realistic face shadows, "
-        "100% solid flat shapes, no smoke, no mist, no particles, no haze, "
-        "no watermark, no signature, no mockup, no t-shirt rendering, "
-        "no photo realism, no photography, no 3D render, "
-        "print-ready vector-style artwork."
-    )
+    if bg_mode == "matched":
+        tech_block = (
+            f"on solid {bg_color} background, the design fills the canvas edge to edge, "
+            f"no border, no margin, seamless with {bg_color} background color, "
+            f"dark streetwear aesthetic, high contrast, crisp line art, no t-shirt, no mockup, no photo realism."
+        )
+    else:
+        tech_block = (
+            "isolated on solid pure white background, centered cohesive graphic, "
+            "screen-print style, thick black outlines, flat solid color fills, "
+            "clean edges, no gradients, no shading, no smudges, "
+            "no realistic shadows, print-ready vector-style artwork, no t-shirt, no mockup."
+        )
 
-    return f"{base} {text_block} {tech_block}"
+    return f"{base} {text_block} {tech_block}".strip()
 
 
 def generate_image(concept):
-    """Generate image via Pollinations Flux.
+    """Generate image via Pollinations Flux API.
 
-    Uses portrait orientation (closer to 4500x5400 print ratio) and higher
-    resolution where possible.
+    Uses portrait orientation (1536x1840) to align with print area aspect ratio.
     """
     full_prompt = build_full_prompt(concept)
     encoded = quote(full_prompt)
 
-    # Portrait orientation: 1536x2048 is closer to the 4500x5400 print ratio
-    # than 2048x2048 square. Gives us a better starting point for upscaling.
     placement = concept.get("placement", "front center")
     if "left chest" in placement or "small" in placement:
-        # Small logo designs can stay square
         width, height = 1536, 1536
     else:
-        # Large prints → portrait to match tee print area ratio (5:6)
         width, height = 1536, 1840
 
     url = (
         f"https://gen.pollinations.ai/image/{encoded}"
-        f"?model=flux&width={width}&height={height}&nologo=true&key={POLLINATIONS_API_KEY}"
+        f"?model=flux&width={width}&height={height}&nologo=true"
     )
+    if POLLINATIONS_API_KEY:
+        url += f"&key={POLLINATIONS_API_KEY}"
 
-    response = requests.get(url, timeout=120)
+    try:
+        response = requests.get(url, timeout=120)
+    except Exception as e:
+        print(f"  ERROR calling Pollinations: {e}")
+        return None
 
     if response.status_code != 200:
         print(f"  ERROR ({response.status_code}): {response.text[:200]}")
@@ -97,83 +94,98 @@ def generate_image(concept):
 
 
 def remove_background(image_bytes):
-    """Strip background using isnet-general-use model without alpha matting.
-
-    Returns a PIL Image with transparent background, or None on failure.
-    """
+    """Strip background using isnet-general-use model without alpha matting for transparent mode."""
+    from rembg import remove
     img = Image.open(BytesIO(image_bytes)).convert("RGBA")
-
-    # Disable alpha matting for clean vector/cartoon art on solid white background.
-    # This avoids matrix solver failures and preserves fine line details.
+    session = get_rembg_session()
     result = remove(
         img,
-        session=REMBG_SESSION,
+        session=session,
         alpha_matting=False,
     )
-
     return result
 
 
 def cleanup_white_halo(img, erode_px=0):
-    """Remove the white halo/fringe that rembg often leaves at edges.
-
-    Erodes the alpha channel by `erode_px` pixels to eat into the fringe,
-    then checks for remaining semi-transparent pixels with high brightness
-    (white halo artifacts) and cleans them.
-    """
+    """Remove fringe artifacts from rembg transparent output."""
     arr = np.array(img)
-    alpha = arr[:, :, 3]
+    if arr.shape[2] < 4:
+        return img
 
-    # Erode alpha mask by erode_px to remove fringe
     if erode_px > 0:
-        # pyrefly: ignore [missing-import]
         from PIL import ImageFilter
-        alpha_img = Image.fromarray(alpha, mode="L")
+        alpha_img = Image.fromarray(arr[:, :, 3], mode="L")
         for _ in range(erode_px):
             alpha_img = alpha_img.filter(ImageFilter.MinFilter(3))
         arr[:, :, 3] = np.array(alpha_img)
 
-    # Kill semi-transparent pixels that are very bright (white halo remnants)
-    # These are pixels where alpha is 1-254 AND RGB brightness > 240
     semi_mask = (arr[:, :, 3] > 0) & (arr[:, :, 3] < 255)
     brightness = arr[:, :, :3].mean(axis=2)
     halo_mask = semi_mask & (brightness > 240)
-    arr[halo_mask, 3] = 0  # Make white halo pixels fully transparent
+    arr[halo_mask, 3] = 0
 
     return Image.fromarray(arr)
 
 
-def check_quality(img, placement="front center"):
-    """Basic quality check after background removal.
+def draw_slogan(img, slogan):
+    """Draw slogan at bottom center if present."""
+    if not slogan:
+        return img
+    
+    draw = ImageDraw.Draw(img)
+    width, height = img.size
+    
+    try:
+        font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.06))
+    except:
+        font = ImageFont.load_default()
+        
+    bbox = draw.textbbox((0, 0), slogan, font=font)
+    text_w = bbox[2] - bbox[0]
+    text_h = bbox[3] - bbox[1]
+    
+    x = (width - text_w) / 2
+    y = height - text_h - int(height * 0.08)
+    
+    outline_w = max(2, int(width * 0.004))
+    for dx in range(-outline_w, outline_w + 1):
+        for dy in range(-outline_w, outline_w + 1):
+            draw.text((x + dx, y + dy), slogan, font=font, fill=(0, 0, 0, 255))
+            
+    draw.text((x, y), slogan, font=font, fill=(255, 255, 255, 255))
+    return img
 
-    Returns (passed: bool, issues: list[str]).
-    Flags designs that may need manual review.
-    """
-    arr = np.array(img)
-    alpha = arr[:, :, 3]
-    total_px = alpha.size
+
+def check_quality(img, bg_mode="matched", placement="front center"):
+    """Check image quality according to design mode."""
     issues = []
+    width, height = img.size
 
-    # Check: too many semi-transparent pixels (sign of failed removal)
-    # With alpha_matting=False, we raise the threshold slightly to allow natural anti-aliased outlines.
-    semi_transparent = ((alpha > 10) & (alpha < 245)).sum()
-    semi_pct = semi_transparent / total_px * 100
-    if semi_pct > 15:
-        issues.append(f"High semi-transparent pixel count ({semi_pct:.1f}%) — rembg may have struggled")
+    if width < 1000 or height < 1000:
+        issues.append(f"Low resolution ({width}x{height})")
 
-    # Check: too little content (design got mostly erased)
-    # Pocket/chest logos naturally have very small opaque pixel percentages.
-    opaque = (alpha > 245).sum()
-    opaque_pct = opaque / total_px * 100
-    min_opaque = 1.0 if any(k in placement.lower() for k in ["chest", "logo", "small"]) else 4.0
-    if opaque_pct < min_opaque:
-        issues.append(f"Very little content remaining ({opaque_pct:.1f}% opaque) — design may be destroyed")
+    arr = np.array(img)
 
-    # Check: content touching edges (bad composition)
-    edge_alpha = np.concatenate([alpha[0, :], alpha[-1, :], alpha[:, 0], alpha[:, -1]])
-    edge_opaque = (edge_alpha > 128).sum()
-    if edge_opaque > 20:
-        issues.append(f"Content touching canvas edges ({edge_opaque} edge pixels opaque)")
+    if bg_mode == "matched":
+        # Check that the image is not a completely blank solid color or blown out
+        std_dev = arr[:, :, :3].std()
+        if std_dev < 10.0:
+            issues.append(f"Image has virtually no detail/variation (std: {std_dev:.2f})")
+    else:
+        # Transparent mode quality checks
+        if arr.shape[2] == 4:
+            alpha = arr[:, :, 3]
+            total_px = alpha.size
+            semi_transparent = ((alpha > 10) & (alpha < 245)).sum()
+            semi_pct = semi_transparent / total_px * 100
+            if semi_pct > 15:
+                issues.append(f"High semi-transparent pixel count ({semi_pct:.1f}%)")
+
+            opaque = (alpha > 245).sum()
+            opaque_pct = opaque / total_px * 100
+            min_opaque = 1.0 if any(k in placement.lower() for k in ["chest", "logo", "small"]) else 4.0
+            if opaque_pct < min_opaque:
+                issues.append(f"Very little content remaining ({opaque_pct:.1f}% opaque)")
 
     return len(issues) == 0, issues
 
@@ -184,23 +196,29 @@ if __name__ == "__main__":
     with open("niches.json", "r") as f:
         data = json.load(f)
 
-    concepts = data["concepts"]
-    niche = data.get("niche", "unknown niche")
-    print(f"Generating {len(concepts)} designs for niche: '{niche}'\n")
+    concepts = data.get("concepts", [])
+    brand = data.get("brand", "KAGE")
+    tagline = data.get("tagline", "WEAR THE SHADOW")
+
+    print(f"[{brand}] Generating {len(concepts)} character-driven designs...\n")
 
     results = []
     flagged = []
 
     for i, concept in enumerate(concepts, 1):
-        filename = f"design_{i:02d}.png"
+        cid = concept.get("id", f"concept_{i:02d}")
+        filename = f"{cid}.png"
         output_path = os.path.join(OUTPUT_DIR, filename)
 
-        print(f"[{i}/{len(concepts)}] {concept['title']}")
-        print(f"  Style: {concept.get('style', '')[:65]}...")
+        bg_mode = concept.get("bg_mode", "matched")
+        bg_color = concept.get("bg_color", "#000000")
+        character = concept.get("character", "KAGE Entity")
+        title = concept.get("title", f"Design {i}")
+
+        print(f"[{i}/{len(concepts)}] {title}")
+        print(f"  Character: {character} ({concept.get('character_tag', '')})")
+        print(f"  Mode: {bg_mode.upper()} ({bg_color if bg_mode == 'matched' else 'Transparent'})")
         print(f"  Placement: {concept.get('placement', 'front center')}")
-        has_text = concept.get("has_text", False)
-        slogan = concept.get("slogan", "")
-        print(f"  Text: {'\"' + slogan + '\"' if has_text and slogan else '(graphic only)'}")
 
         image_bytes = generate_image(concept)
 
@@ -210,21 +228,26 @@ if __name__ == "__main__":
             continue
 
         try:
-            # Step 1: Remove background
-            print(f"  Removing background (isnet-general-use + alpha matting)...")
-            result = remove_background(image_bytes)
+            if bg_mode == "matched":
+                print(f"  ✓ Matched mode: Preserving original background ({bg_color}) — skipping rembg.")
+                img = Image.open(BytesIO(image_bytes)).convert("RGB")
+            else:
+                print(f"  Transparent mode: Stripping background via rembg...")
+                img = remove_background(image_bytes)
+                if img is None:
+                    print(f"  SKIPPED — background removal failed.")
+                    time.sleep(2)
+                    continue
+                img = cleanup_white_halo(img, erode_px=0)
 
-            if result is None:
-                print(f"  SKIPPED — background removal failed.")
-                time.sleep(2)
-                continue
+            # Slogan overlay if requested
+            slogan = concept.get("slogan", "")
+            if concept.get("has_text", False) and slogan:
+                print(f"  Drawing slogan: '{slogan}'")
+                img = draw_slogan(img, slogan)
 
-            # Step 2: Clean up white halo
-            print(f"  Cleaning up white halo...")
-            result = cleanup_white_halo(result, erode_px=0)
-
-            # Step 3: Quality check
-            passed, issues = check_quality(result, concept.get("placement", "front center"))
+            # Quality verification
+            passed, issues = check_quality(img, bg_mode=bg_mode, placement=concept.get("placement", "front center"))
             if not passed:
                 print(f"  ⚠ QUALITY WARNING:")
                 for issue in issues:
@@ -233,32 +256,43 @@ if __name__ == "__main__":
             else:
                 print(f"  ✓ Quality check passed")
 
-            # Save the design
-            result.save(output_path, "PNG")
+            # Save design
+            img.save(output_path, "PNG")
             size_kb = os.path.getsize(output_path) // 1024
-            print(f"  Saved -> {output_path} ({size_kb} KB, transparent PNG)")
+            print(f"  Saved -> {output_path} ({size_kb} KB, {img.size[0]}x{img.size[1]})")
 
             results.append({
+                "id": cid,
                 "filename": filename,
-                "title": concept["title"],
+                "title": title,
+                "character": character,
+                "character_tag": concept.get("character_tag", ""),
+                "niche": concept.get("niche", ""),
+                "niche_tag": concept.get("niche_tag", ""),
+                "bg_mode": bg_mode,
+                "bg_color": bg_color,
+                "shirt_colors": concept.get("shirt_colors", ["Black"]),
+                "product_types": concept.get("product_types", ["tee", "hoodie"]),
+                "mockup_style": concept.get("mockup_style", "floating_3d"),
                 "slogan": slogan,
-                "has_text": has_text,
+                "has_text": concept.get("has_text", False),
                 "placement": concept.get("placement", "front center"),
                 "quality_passed": passed,
             })
 
         except Exception as e:
-            print(f"  ERROR: {e}")
+            print(f"  ERROR processing design {cid}: {e}")
 
         time.sleep(2)
 
     # Save manifest
-    with open(os.path.join(OUTPUT_DIR, "manifest.json"), "w") as f:
+    manifest_path = os.path.join(OUTPUT_DIR, "manifest.json")
+    with open(manifest_path, "w") as f:
         json.dump(results, f, indent=2)
 
-    print(f"\nDone. {len(results)}/{len(concepts)} images saved.")
+    print(f"\nDone. {len(results)}/{len(concepts)} designs saved to {OUTPUT_DIR}/")
     if flagged:
-        print(f"\n⚠ {len(flagged)} designs flagged for manual review:")
+        print(f"⚠ {len(flagged)} designs flagged for review:")
         for fn in flagged:
             print(f"  • {fn}")
-    print(f"Manifest: {OUTPUT_DIR}/manifest.json")
+    print(f"Manifest written: {manifest_path}")

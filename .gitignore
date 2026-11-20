@@ -1,6 +1,9 @@
-.env
+.env*
 venv/
+.venv*
 __pycache__/
 designs/
 niches.json
 *.pyc
+.DS_Store
+machine/out/

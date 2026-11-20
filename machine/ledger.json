@@ -1,0 +1,86 @@
+{
+  "images_generated": 16,
+  "failures": 0,
+  "history": [
+    {
+      "t": "2026-09-21T12:07:18",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:07:32",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:07:52",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:08:03",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:08:19",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:08:33",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:08:48",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:08:59",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:09:15",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:09:29",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:09:43",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:09:56",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:10:11",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:10:23",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:10:37",
+      "kind": "scene",
+      "ok": true
+    },
+    {
+      "t": "2026-09-21T12:10:54",
+      "kind": "scene",
+      "ok": true
+    }
+  ]
+}

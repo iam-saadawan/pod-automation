@@ -1,82 +1,225 @@
 [
   {
-    "filename": "design_01.png",
-    "title": "Keyboard Journey Badge Tee - Vintage Graphic",
+    "id": "kage_ronin_01",
+    "filename": "kage_ronin_01.png",
+    "title": "KAGE-01 Cyber Shadow Ronin Mask Graphic",
+    "character": "Shadow Ronin",
+    "character_tag": "character:shadow-ronin",
+    "niche": "anime-manga",
+    "niche_tag": "niche:anime-manga",
+    "bg_mode": "matched",
+    "bg_color": "#000000",
+    "shirt_colors": [
+      "Black"
+    ],
+    "product_types": [
+      "boxy_tee",
+      "hoodie",
+      "tee",
+      "tote_bag"
+    ],
+    "mockup_style": "floating_3d",
     "slogan": "",
     "has_text": false,
-    "placement": "front center \u2014 large graphic filling chest area",
-    "quality_passed": true
+    "placement": "front center",
+    "quality_passed": true,
+    "mockup_files": {
+      "floating_3d": "designs/mockups/kage_ronin_01_floating_3d.jpg"
+    }
   },
   {
-    "filename": "design_02.png",
-    "title": "Switch Lover Tattoo Flash Tee - Bold Graphic",
+    "id": "kage_ronin_02",
+    "filename": "kage_ronin_02.png",
+    "title": "Shadow Ronin Katana Void Strike Graphic",
+    "character": "Shadow Ronin",
+    "character_tag": "character:shadow-ronin",
+    "niche": "anime-manga",
+    "niche_tag": "niche:anime-manga",
+    "bg_mode": "matched",
+    "bg_color": "#000000",
+    "shirt_colors": [
+      "Black"
+    ],
+    "product_types": [
+      "tee",
+      "hoodie",
+      "boxy_tee"
+    ],
+    "mockup_style": "floating_3d",
     "slogan": "",
     "has_text": false,
-    "placement": "front left chest \u2014 small bold logo style",
-    "quality_passed": true
+    "placement": "front center",
+    "quality_passed": true,
+    "mockup_files": {
+      "floating_3d": "designs/mockups/kage_ronin_02_floating_3d.jpg"
+    }
   },
   {
-    "filename": "design_03.png",
-    "title": "Deep Dive Anime Tee - Retro Graphic",
-    "slogan": "Deep Dive Into The Keys",
-    "has_text": true,
-    "placement": "front center \u2014 oversized print from chest to waist",
-    "quality_passed": false
-  },
-  {
-    "filename": "design_04.png",
-    "title": "Precision Input Anime Tee - Retro Graphic",
+    "id": "kage_drift_01",
+    "filename": "kage_drift_01.png",
+    "title": "Drift Ghost Midnight S13 Phantom Graphic",
+    "character": "Drift Ghost",
+    "character_tag": "character:drift-ghost",
+    "niche": "jdm-auto",
+    "niche_tag": "niche:jdm-auto",
+    "bg_mode": "matched",
+    "bg_color": "#1B2838",
+    "shirt_colors": [
+      "Navy",
+      "Black"
+    ],
+    "product_types": [
+      "tee",
+      "long_sleeve",
+      "hoodie",
+      "tote_bag"
+    ],
+    "mockup_style": "floating_3d",
     "slogan": "",
     "has_text": false,
-    "placement": "front left chest \u2014 small bold logo style",
-    "quality_passed": false
+    "placement": "front center",
+    "quality_passed": true,
+    "mockup_files": {
+      "floating_3d": "designs/mockups/kage_drift_01_floating_3d.jpg"
+    }
   },
   {
-    "filename": "design_05.png",
-    "title": "Powered By Switches Cartoon Tee - Funny Graphic",
-    "slogan": "Powered By Switches & Code",
-    "has_text": true,
-    "placement": "front center \u2014 large graphic filling chest area",
-    "quality_passed": true
-  },
-  {
-    "filename": "design_06.png",
-    "title": "Hero Keycap Cartoon Tee - Retro Graphic",
+    "id": "kage_drift_02",
+    "filename": "kage_drift_02.png",
+    "title": "Drift Ghost Redline Tachometer Phantom Graphic",
+    "character": "Drift Ghost",
+    "character_tag": "character:drift-ghost",
+    "niche": "jdm-auto",
+    "niche_tag": "niche:jdm-auto",
+    "bg_mode": "matched",
+    "bg_color": "#000000",
+    "shirt_colors": [
+      "Black"
+    ],
+    "product_types": [
+      "tee",
+      "hoodie",
+      "boxy_tee"
+    ],
+    "mockup_style": "floating_3d",
     "slogan": "",
     "has_text": false,
-    "placement": "front left chest \u2014 small bold logo style",
-    "quality_passed": true
+    "placement": "front center",
+    "quality_passed": true,
+    "mockup_files": {
+      "floating_3d": "designs/mockups/kage_drift_02_floating_3d.jpg"
+    }
   },
   {
-    "filename": "design_07.png",
-    "title": "Press On Sticker Tee - Pop Art Graphic",
-    "slogan": "Press On",
-    "has_text": true,
-    "placement": "front left chest \u2014 small bold logo style",
-    "quality_passed": true
-  },
-  {
-    "filename": "design_08.png",
-    "title": "Custom JDM Racer Tee - Car Sticker Graphic",
+    "id": "kage_glitch_01",
+    "filename": "kage_glitch_01.png",
+    "title": "Glitch Skull 16-Bit Cyber Respawn Graphic",
+    "character": "Glitch Skull",
+    "character_tag": "character:respawn-or-die",
+    "niche": "retro-gaming",
+    "niche_tag": "niche:retro-gaming",
+    "bg_mode": "matched",
+    "bg_color": "#36454F",
+    "shirt_colors": [
+      "Dark Heather",
+      "Black"
+    ],
+    "product_types": [
+      "tee",
+      "crewneck",
+      "hoodie"
+    ],
+    "mockup_style": "floating_3d",
     "slogan": "",
     "has_text": false,
-    "placement": "front left chest \u2014 small bold logo style",
-    "quality_passed": true
+    "placement": "front center",
+    "quality_passed": true,
+    "mockup_files": {
+      "floating_3d": "designs/mockups/kage_glitch_01_floating_3d.jpg"
+    }
   },
   {
-    "filename": "design_09.png",
-    "title": "Custom Crafted Power Tee - Car Sticker Graphic",
-    "slogan": "Custom Crafted Power",
-    "has_text": true,
-    "placement": "front left chest \u2014 small bold logo style",
-    "quality_passed": true
+    "id": "kage_glitch_02",
+    "filename": "kage_glitch_02.png",
+    "title": "Glitch Skull Game Over Cartridge Graphic",
+    "character": "Glitch Skull",
+    "character_tag": "character:respawn-or-die",
+    "niche": "retro-gaming",
+    "niche_tag": "niche:retro-gaming",
+    "bg_mode": "matched",
+    "bg_color": "#000000",
+    "shirt_colors": [
+      "Black"
+    ],
+    "product_types": [
+      "tee",
+      "hoodie",
+      "boxy_tee"
+    ],
+    "mockup_style": "floating_3d",
+    "slogan": "",
+    "has_text": false,
+    "placement": "front center",
+    "quality_passed": true,
+    "mockup_files": {
+      "floating_3d": "designs/mockups/kage_glitch_02_floating_3d.jpg"
+    }
   },
   {
-    "filename": "design_10.png",
-    "title": "Wallet Cries RGB Tee - Kawaii Horror Graphic",
-    "slogan": "My Wallet Cries RGB",
-    "has_text": true,
-    "placement": "front left chest \u2014 small bold logo style",
-    "quality_passed": true
+    "id": "kage_observer_01",
+    "filename": "kage_observer_01.png",
+    "title": "The Observer Deep Space Nomad Visor Graphic",
+    "character": "The Observer",
+    "character_tag": "character:the-observer",
+    "niche": "cosmic-space",
+    "niche_tag": "niche:cosmic-space",
+    "bg_mode": "matched",
+    "bg_color": "#000000",
+    "shirt_colors": [
+      "Black",
+      "Navy"
+    ],
+    "product_types": [
+      "tee",
+      "hoodie",
+      "long_sleeve",
+      "tote_bag"
+    ],
+    "mockup_style": "floating_3d",
+    "slogan": "",
+    "has_text": false,
+    "placement": "front center",
+    "quality_passed": true,
+    "mockup_files": {
+      "floating_3d": "designs/mockups/kage_observer_01_floating_3d.jpg"
+    }
+  },
+  {
+    "id": "kage_observer_02",
+    "filename": "kage_observer_02.png",
+    "title": "The Observer Event Horizon Nomad Graphic",
+    "character": "The Observer",
+    "character_tag": "character:the-observer",
+    "niche": "cosmic-space",
+    "niche_tag": "niche:cosmic-space",
+    "bg_mode": "matched",
+    "bg_color": "#1B2838",
+    "shirt_colors": [
+      "Navy",
+      "Black"
+    ],
+    "product_types": [
+      "tee",
+      "hoodie",
+      "long_sleeve"
+    ],
+    "mockup_style": "floating_3d",
+    "slogan": "",
+    "has_text": false,
+    "placement": "front center",
+    "quality_passed": true,
+    "mockup_files": {
+      "floating_3d": "designs/mockups/kage_observer_02_floating_3d.jpg"
+    }
   }
 ]
